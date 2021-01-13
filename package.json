@@ -10,15 +10,25 @@
     "@types/node": "^12.0.0",
     "@types/react": "^16.9.53",
     "@types/react-dom": "^16.9.8",
+    "autoprefixer": "^10.2.1",
+    "formik": "^2.2.6",
+    "postcss": "^8.2.4",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-scripts": "4.0.1",
+    "tailwindcss": "^2.0.2",
     "typescript": "^4.0.3",
     "web-vitals": "^0.2.4"
   },
+  "devDependencies": {
+    "@tailwindcss/custom-forms": "^0.2.1",
+    "postcss-cli": "^8.3.0"
+  },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
+    "start": "npm run watch:css && react-scripts start",
+    "build": "npm run build:css && react-scripts build",
+    "build:css": "postcss src/assets/tailwind.css -o src/assets/main.css",
+    "watch:css": "postcss src/assets/tailwind.css -o src/assets/main.css",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
